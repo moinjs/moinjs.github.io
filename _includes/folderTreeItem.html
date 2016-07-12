@@ -1,0 +1,15 @@
+{% for f in include.files %}
+<li>
+    {% case f.type %}
+    {% when 'file' %}
+    <span class="file-tree-text-name">{{f.name}}</span>
+    {% if f.comment %}<span class="file-tree-text-comment">// {{f.comment}}</span>{% endif %}
+    {% when 'folder' %}
+    <span class="file-tree-text-name">{{f.name}}/</span>
+    {% if f.comment %}<span class="file-tree-text-comment">// {{f.comment}}</span>{% endif %}
+    <ul class="file-tree-text-folder">
+        {% include folderTreeItem.html files=f.files %}
+    </ul>
+    {% endcase %}
+</li>
+{% endfor %}

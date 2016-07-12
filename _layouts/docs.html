@@ -1,0 +1,115 @@
+---
+layout: default
+---
+{% assign docs = site.docs | sort:"weight"  %}
+
+<div class="page js-page ">
+    <!-- One Page Sidebar -->
+    <div class="one-page-sidebar">
+        <!-- One Page Sidebar Header -->
+        <div class="one-page-sidebar-header">
+            <!-- One Page Logo -->
+            <div class="one-page-logo">
+                <!-- Logo Image -->
+                <a href="index.html" class="logo-image ">
+                    <img src="{{'images/logo-text.png' | prepen:site.baseurl}}" alt="logo">
+                </a>
+                <!-- End of Logo Image -->
+            </div>
+            <!-- End of One Page Logo -->
+            <!-- One Page Meta -->
+            <div class="one-page-meta">
+                <ul class="one-page-meta-list">
+                    <li>
+                        <a href="http://moinjs.github.io">
+                            <i class="one-page-meta-list-icon fa fa-link"></i>Website</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/moinjs/moin">
+                            <i class="one-page-meta-list-icon fa fa-github-alt"></i>GitHub</a>
+                    </li>
+                    <li>
+                        <a href="https://gitter.im/moinjs/moin">
+                            <i class="one-page-meta-list-icon fa fa-comment"></i>Gitter</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- End of One Page Meta -->
+        </div>
+        <!-- End of One Page Sidebar Header -->
+        <!-- One Page Nav -->
+        <div class="one-page-nav-wrapper js-custom-scrollbar">
+            <ul class="one-page-nav js-one-page-nav js-menu-vertical" data-prepend-to=".js-prepend-mobile-menu">
+                {% for d in docs %}
+                <li{% if forloop.first == true %} class="is-active"{% endif %}>
+                    <a href="#{{d.title|slugify}}" class="">
+                            <span class="one-page-nav-icon">
+                                <i class="fa fa-{{d.icon}}"></i>
+                            </span>{{d.title}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <!-- End of One Page Nav -->
+        <!-- One Page Sidebar Footer -->
+        <footer class="one-page-sidebar-footer">
+            <a href="http://moinjs.github.io">Moin JS</a>, all rights reserved. 2016 ©
+        </footer>
+        <!-- End of One Page Sidebar Footer -->
+    </div>
+    <!-- End of One Page Sidebar -->
+    <!-- One Page Content -->
+    <div class="one-page-content">
+        <!-- Header -->
+        <header class="header large header-one-page ">
+            <div class="container-fluid container-spaced">
+                <div class="row">
+                    <div class="col-md-9 col-sm-6 col-xs-7">
+                        <nav class="right helper">
+                            {% assign pages = site.pages | sort:"weight" %}
+                            <ul class="menu sf-menu js-menu">
+                                {% for p in pages %}
+                                {% if p.menu %}
+                                <li>
+                                    <a {% if p.url==page.url %}class="active" {% endif %} href="{{ p.url }}">
+                                        {{ p.menu }}
+                                    </a>
+                                </li>
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End of Header -->
+        <div id="content">
+
+            <div class="container-fluid container-spaced">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="js-prepend-mobile-menu">
+                            <!-- The mobile menu will be prepended here -->
+                        </div>
+                        {% for d in docs %}
+                        <!-- Category Info -->
+                        <div class="category-info helper pt0" id="{{d.title|slugify}}">
+                            <h3 class="category-title"> {{d.title}}
+                                <!-- Fragment Identifier -->
+                                <a class="fragment-identifier js-fragment-identifier fragment-identifier-scroll"
+                                   href="#{{d.title|slugify}}">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <!-- End of Fragment Identifier -->
+                            </h3>
+                        </div>
+                        {{d.content}}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of One Page Content -->
+</div>

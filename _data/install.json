@@ -1,0 +1,35 @@
+[
+  {
+    "type": "folder",
+    "name": "services",
+    "comment":"Here is the place to add your Services",
+    "files": [
+      {
+        "type": "folder",
+        "name": "hello",
+        "files": [
+          {
+            "type": "file",
+            "name": "package.json"
+          },
+          {
+            "type": "file",
+            "name": "index.js"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "folder",
+    "name": "node_modules"
+  },
+  {
+    "type": "file",
+    "name": "package.json"
+  },
+  {
+    "type": "file",
+    "name": "index.js"
+  }
+]

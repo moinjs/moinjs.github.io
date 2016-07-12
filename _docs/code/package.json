@@ -1,0 +1,7 @@
+{
+  "name": "hello",
+  "description": "test service",
+  "moin": {
+    "type": "service"
+  }
+}

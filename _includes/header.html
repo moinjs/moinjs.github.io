@@ -1,0 +1,34 @@
+<div class="page js-page ">
+    <!-- Header -->
+    <div class="header header-over large">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <!-- Logo Image -->
+                    <a href="index.html" class="logo-image">
+                        <img src="{{'images/logo.png'| prepend: site.baseurl}}" alt="logo">
+                    </a>
+                    <!-- End of Logo Image -->
+                </div>
+                <div class="col-md-9 col-sm-6 col-xs-6">
+                    <!-- Menu -->
+                    <nav class="right helper">
+                        {% assign pages = site.pages | sort:"weight"  %}
+                        <ul class="menu sf-menu js-menu menu-light">
+                            {% for p in pages %}
+                            {% if p.menu %}
+                            <li>
+                                <a {% if p.url==page.url %}class="active" {% endif %} href="{{ p.url }}">
+                                    {{ p.menu }}
+                                </a>
+                            </li>
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </nav>
+                    <!-- End of Menu -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Header -->

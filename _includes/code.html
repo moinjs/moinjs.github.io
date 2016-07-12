@@ -1,0 +1,4 @@
+<div class="code-highlight {% if include.name %}code-highlight-with-label{% endif %}" data-label="{{include.name}}">
+    <span class="js-copy-to-clipboard copy-code">copy</span>
+    <pre><code class="language-{{include.lang}} js-code">{% include_relative {{include.file | prepend:"code/"}} %}</code></pre>
+</div>
