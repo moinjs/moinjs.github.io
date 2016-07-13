@@ -3,4 +3,24 @@ icon: test2
 title: Services
 weight: 2
 ---
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/bash.min.js"></script>
+<p>Every piece of code you write will be placed inside a Service. A service has exactly one job. Some examples are:</p>
+<ul>
+    <li>Send a Mail</li>
+    <li>Open an HTTP Server</li>
+    <li>Send Events every full hour</li>
+    <li>Listen on Slack Messages</li>
+    <li>Convert an JS Array to a CSV String</li>
+</ul>
+
+<p>Services communicate with each other over the <a href="#event-system">Event System</a></p>
+<p>In order to allow the Hot-Reload Feature of Moin, the services have to be unloueded in a proper Way</p>
+<ul>
+    <li>Timers, Timeouts and Immediate Calls get canceled automatically by the System.</li>
+    <li>Open files, network connections or other io handlers have to be closed by the Programmer.</li>
+    <li>For this purpose you can use <em>moin.registerUnloadHandler</em></li>
+</ul>
+<div class="row">
+    <div class="col-md-12">
+        {% include code.html file="express.js" name="A simple Webserver" lang="javascript" %}
+    </div>
+</div>

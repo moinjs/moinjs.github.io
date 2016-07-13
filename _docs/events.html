@@ -3,3 +3,35 @@ icon: test
 title: Event System
 weight: 3
 ---
+<div class="row">
+    <div class="col-md-12">
+        <p>
+            Every Service has access to the Moin Event System. You can emit and listen for events and even get results
+            from the eventhandlers.
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        {% include code.html file="example1/event_emitter.js" lang="javascript" name="Event Emitter"%}
+    </div>
+    <div class="col-md-6">
+        {% include code.html file="example1/event_listener.js" lang="javascript" name="Event Listener"%}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <p>
+            Listener can return a value or a Promise. Errors get catched and reported to the Emitter.
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        {% include code.html file="example2/event_emitter.js" lang="javascript" name="Event Emitter"%}
+    </div>
+    <div class="col-md-6">
+        {% include code.html file="example2/event_listener.js" lang="javascript" name="Event Listener"%}
+    </div>
+</div>
+
