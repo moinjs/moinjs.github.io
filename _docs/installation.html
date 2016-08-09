@@ -3,30 +3,32 @@ icon: test2
 title: Installation & First Application
 weight: 1
 ---
+<div class="row">
+    <div class="col-md-12">
+        <img class="helper mb60 mt30 image remove-border" src="{{'images/moin.gif'|prepend:page.baseurl}}"
+             alt="installation"/>
+    </div>
+</div>
 <ul class="steps">
     <li class="step">
         <span class="step-number">1</span>
-        <h4 class="step-title">Create the Needed Files and Directories</h4>
+        <h4 class="step-title">Install the needed packages</h4>
         <div class="step-content">
-            Create all Files and Folders:
             {% include code.html file="install.sh" lang="bash"%}
-            This should lead to the following file structure:
-            {% include folderTree.html files= site.data.install%}
         </div>
     </li>
     <li class="step">
         <span class="step-number">2</span>
-        <h4 class="step-title">Add the Moin Bootstrap code</h4>
+        <h4 class="step-title">Configure Moin</h4>
         <div class="step-content">
-            {% include code.html file="index.js" lang="javascript" name="index.js"%}
+            {% include code.html file="install1.sh" lang="bash"%}
         </div>
     </li>
     <li class="step">
         <span class="step-number">3</span>
-        <h4 class="step-title">Create the Service Files</h4>
+        <h4 class="step-title">Create a Service</h4>
         <div class="step-content">
-            {% include code.html file="package.json" lang="json" name="services/hello/package.json"%}
-            {% include code.html file="service.js" lang="javascript" name="services/hello/index.js"%}
+            {% include code.html file="install2.sh" lang="bash"%}
         </div>
     </li>
     <li class="step">
@@ -37,7 +39,8 @@ weight: 1
             Which should give you a similar output like this:
             <div class="row">
                 <div class="col-md-12">
-                    <img class="helper mb60 mt30 image remove-border" src="{{'images/start.png'|prepend:page.baseurl}}" alt="startup"/>
+                    <img class="helper mb60 mt30 image remove-border" src="{{'images/start.png'|prepend:page.baseurl}}"
+                         alt="startup"/>
                 </div>
             </div>
         </div>

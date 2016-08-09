@@ -34,4 +34,20 @@ weight: 3
         {% include code.html file="example2/event_listener.js" lang="javascript" name="Event Listener"%}
     </div>
 </div>
+<div class="row">
+    <div class="col-md-12">
+        <p>
+            If you want only one Listener to get called and return a value, you can use <em>moin.act</em> instead of <em>moin.emit</em>.
+            This only calls the best-fitting handler.
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        {% include code.html file="example3/event_emitter.js" lang="javascript" name="Event Emitter"%}
+    </div>
+    <div class="col-md-6">
+        {% include code.html file="example3/event_listener.js" lang="javascript" name="Event Listener"%}
+    </div>
+</div>
 
