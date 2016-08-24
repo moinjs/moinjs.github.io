@@ -1,0 +1,12 @@
+{
+  "name":"test-module",
+  "moin":{
+    "type":"module",
+    "moduleDependencies":[
+      "moin-service-loader"
+    ],
+    "settings":{
+      "angry":false
+    }
+  }
+}

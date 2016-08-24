@@ -7,6 +7,17 @@ moin.emit("testEvent", {
     console.log("Resolved Handler:",results.stats.resolve);//2
     console.log("Rejected Handler:",results.stats.rejected);//1
 });
+
+//Or with ES2016 destructuring:
+
+moin.emit("testEvent", {
+    x: 3, y: 10
+}).then(({values,errors,stats})=> {
+    console.log("Return values", values);//[5,2]
+    console.log("Errors", errors);//["Error"]
+    console.log("Handlers for this event:",stats.handler);//3
+});
+
 //You also have an Optional 3. parameter which sets an Timeout for the Handler.
 
 moin.emit("testEvent", {

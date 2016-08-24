@@ -1,0 +1,34 @@
+---
+icon: test2
+title: Modules &amp; Services
+weight: 2
+---
+Two types of code are used in Moin: Modules &amp; Services.
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Modules</h2>
+        <ul>
+            <li>Adds functionality to the core and API methods for the services</li>
+            <li>Is loaded on startup and can not be unloaded</li>
+            <li>Settings are read from the <em>config.json</em> file</li>
+        </ul>
+        {% include code.html file="ms/module.json" lang="javascript" name="package.json of a module"%}
+        {% include code.html file="ms/module.js" lang="javascript" name="Module"%}
+    </div>
+    <div class="col-md-6">
+        <h2>Services</h2>
+        <ul>
+            <li>Adds functionality for other services over the event system</li>
+            <li>Can be loaded and unloaded dynamically upon filesystem changes</li>
+            <li>Settings are read from a JSON file with the service's name(moin-service-settings module)</li>
+        </ul>
+        {% include code.html file="ms/service.json" lang="javascript" name="package.json of a service"%}
+        {% include code.html file="ms/service.js" lang="javascript" name="Service"%}
+    </div>
+</div>
+<div class="row">
+    In addition to the dedicated <em>modules</em> and <em>services</em> folders, both types of packages can be installed
+    in the <em>node_modules</em> folder. This adds the possibility to add a service from the NPM repository on-the-fly
+    (e.g. <em>npm install moin-cron</em>).
+</div>

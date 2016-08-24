@@ -1,0 +1,9 @@
+{
+  "name":"test-service",
+  "moin":{
+    "type":"service",
+    "settings":{
+      "name":"World"
+    }
+  }
+}
